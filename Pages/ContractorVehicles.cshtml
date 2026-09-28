@@ -1,0 +1,44 @@
+﻿@page
+@model Sizanani_Transporter_Manangement.Pages.ContractorVehiclesModel
+@{
+    ViewData["Title"] = "Contractor Vehicles";
+}
+
+
+<form method="get">
+    <div>
+        <label for="ddlContractor">Select Contractor:</label>
+        <select id="ddlContractor" asp-for="contractorId" asp-items="Model.contractors"
+                onchange="this.form.submit();">
+            <option value="">-- Choose Contractor --</option>
+        </select>
+    </div>
+</form>
+
+@if (Model.vehicles != null && Model.vehicles.Any())
+{
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Registration Number</th>
+                    <th>Model</th>
+                    <th>Weight(Tons)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicle in Model.vehicles)
+                {
+                    <tr>
+                        <td>@vehicle.TypeName</td>
+                        <td>@vehicle.Registration_Number</td>
+                        <td>@vehicle.Model</td>
+                        <td>@vehicle.Weight</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+

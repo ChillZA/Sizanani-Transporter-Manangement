@@ -1,0 +1,33 @@
+﻿@page
+@model Sizanani_Transporter_Manangement.Pages.VehicleModel
+@{
+    ViewData["Title"] = "Register Vehicle";
+}
+
+<form method="post">
+    <div>
+        <label>Type: </label>
+        <select id="ddlVehicleType"
+                asp-for="Vehicle.TypeId"
+                asp-items="Model.vehicleTypes">
+            <option value="">-- Choose a Role --</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Registration Number: </label>
+        <input asp-for="Vehicle.Registration_Number" maxlength="10" />
+    </div>
+
+    <div>
+        <label>Model: </label>
+        <input asp-for="Vehicle.Model" maxlength="100" />
+    </div>
+
+    <div>
+        <label>Weight: </label>
+        <input asp-for="Vehicle.Weight" />
+    </div>
+
+    <button type="submit">Register Contractor</button>
+</form>

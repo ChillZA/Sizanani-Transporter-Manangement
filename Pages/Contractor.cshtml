@@ -1,0 +1,25 @@
+﻿@page "Contractor"
+@model Sizanani_Transporter_Manangement.Pages.ContractorModel
+@{
+    ViewData["Title"] = "Register Contractor";
+}
+
+
+<form method="post">
+    <div>
+        <label>Name: </label>
+        <input asp-for="Contractor.Name" maxlength="100" />
+    </div>
+
+    <div>
+        <label>Email: </label>
+        <input asp-for="Contractor.Email" maxlength="100"/>
+    </div>
+
+    <div>
+        <label>Phone: </label>
+        <input asp-for="Contractor.Phone" maxlength="10" />
+    </div>
+
+    <button type="submit">Register Contractor</button>
+</form>
